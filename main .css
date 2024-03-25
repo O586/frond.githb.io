@@ -215,7 +215,7 @@ h1 {
 }
 .heart{
     position: absolute;
-    bottom: 10px;
+    bottom: 80px;
     right:670px;
     transform: translate(-50%,-50%);
 

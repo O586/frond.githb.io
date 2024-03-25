@@ -1,0 +1,243 @@
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #373B44;
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+    background: linear-gradient(to right, #4286f4, #373B44);
+
+}
+:root{
+    --fc1: #f20;
+    --fc2: #ff0;
+    --fc3: #04f;
+    --fc4: #0f4;
+    --fc5: #f0f;
+    --fc: var(--fc1);
+}
+.fireworks:before, .fireworks:after{
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: -120px 0 var(--fc),
+                120px 0 var(--fc),
+                0 120px var(--fc),
+                0 -120px var(--fc),
+                45px 45px var(--fc),
+                -45px 45px var(--fc),
+                85px 85px var(--fc),
+                -85px 85px var(--fc),
+                45px -45px var(--fc),
+                -45px -45px var(--fc),
+                85px -85px var(--fc),
+                -85px -85px var(--fc),
+                65px 0 var(--fc),
+                -65px 0 var(--fc),
+                0 65px var(--fc),
+                0 -65px var(--fc),
+                100px 45px var(--fc),
+                -100px 45px var(--fc),
+                -50px 100px var(--fc),
+                50px 100px var(--fc),
+                100px -45px var(--fc),
+                -100px -45px var(--fc),
+                -50px -100px var(--fc),
+                50px -100px var(--fc),
+                5px 10px var(--fc);
+    animation: 1s bang ease-out infinite backwards, 
+                1s gravity ease-in infinite backwards, 
+                5s position linear infinite backwards;
+}
+.fireworks:after{
+    animation-delay: 1.25s, 1.25s, 1.25s;
+    animation-duration: 1.25s, 1.25s, 6.25s;
+}
+@keyframes bang {
+    from {
+        box-shadow: 0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff,
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff,
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff, 
+                    0 0 #fff,
+                    0 0 #fff; 
+    }
+}
+
+@keyframes gravity {
+    to {
+        transform: translate(-10px, 150px);
+        height: 6px;
+        width: 4px;
+        opacity: 0; 
+    }
+}
+@keyframes position {
+    0%, 19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+        --fc: var(--fc1);
+    }
+
+    20%, 39.9% {
+        margin-top: 2%;
+        margin-left: 70%; 
+        --fc: var(--fc2);
+    }
+
+    40%, 59.9% {
+        margin-top: 20%;
+        margin-left: 70%; 
+        --fc: var(--fc3);
+    }
+
+    60%, 79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+        --fc: var(--fc4);
+    }
+
+    80%, 99.9% {
+        margin-top: 30%;
+        margin-left: 80%; 
+        --fc: var(--fc5);
+    } 
+}
+.windovs {
+ background-color: transparent;
+ width: 1400px;
+ height: 1200px;
+ margin: 0 auto;
+ border: 25px solid rgb(230, 227, 68);
+ border-radius: 40px;
+
+}
+svg #line {
+    fill: none;
+    stroke: #e00000;
+    stroke-width: 1.5;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4;
+  
+    stroke-opacity: 1;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 3s linear infinite;
+  }
+  svg #point {
+    fill: none;
+    stroke: #f00000;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: .1;
+    stroke-opacity: 1;
+    stroke-dasharray: .0001, .9999;
+    stroke-dashoffset: 1;
+    animation: dash 3s linear infinite;
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 1;
+    }
+    80% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+.box {
+ width: 1200px;
+ height: 1000px;
+ margin: 0px 0px 0px 120px ;
+}
+.imeg {
+ background: url(./imeg/1710969189347.jpg);
+ width: 960px;
+ height: 720px;
+ margin:  0 auto;
+
+}
+
+h1 {
+    font-size: 3vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fefefe;
+    background: #00416A;
+    background: -webkit-linear-gradient(to right, #FFE000, #7f9937, #00416A);
+    background: linear-gradient(to right, #FFE000, #799F0C, #00416A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+ text-align: center;
+
+}
+@keyframes gradient {
+0%{
+    background-position: 0 50%;
+}
+50%{
+   background-position: 100% 50%; 
+}
+100%{
+    background-position:  0 50%; 
+ }
+}
+.heart{
+    position: absolute;
+    bottom: 10px;
+    right:670px;
+    transform: translate(-50%,-50%);
+
+}
+i{
+    color: #e71e1e;
+    font-size: 90px;
+    animation: beat 0.9s infinite;
+    text-shadow:
+        0 0 5px rgb(187, 21, 21),
+        0 0 45px rgb(182, 25, 25),
+        0 0 90px rgb(158, 48, 48)
+    ;
+}
+@keyframes beat{
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.15);
+    }
+    40%{
+        transform: scale(1.4);
+    }
+}
